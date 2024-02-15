@@ -25,7 +25,7 @@ const deleteItem = (id) => {
   <div class="card" style="width: 18rem">
     <div class="card-body">
       <p class="card-text">
-        {{ todo }}
+        {{ todo.title }}
       </p>
       <!-- 子组件ItemEdit:接收参数在组件实例对象上,直接调用即可,不可修改 -->
       <button type="button" class="btn btn-danger" @click="deleteItem(todo.id)">Delete</button>

@@ -8,22 +8,22 @@ export default {
     const store = useTodoListStore()
 
     // storeToRefs让todoList保持反应性:
-    const { todoLists } = storeToRefs(store)
-
+    const { todoList } = storeToRefs(store)
+    console.log(todoList.value)
     //需要将toggleCompleted带入组件中。由于它是一个action而不是反应式state属性，因此不将 storeToRefs 用于 toggleCompleted
     const { toggleCompleted } = store
-    return { todoLists, toggleCompleted }
+    return { todoList, toggleCompleted }
   }
 }
 </script>
 
 <template>
-  <div v-for="todo in todoLists" :key="todo.id">
+  <div v-for="todo in todoList" :key="todo.id">
     <!-- checking each item off when it is completed -->
     <span @click="toggleCompleted(todo.id)">
       <i class="fa-solid fa-check"></i>
     </span>
-    <span :class="{ completed: todo.completed }">{{ todo.item }}</span>
+    <span :class="{ completed: todo.completed }">{{ todo.title }}</span>
     <!-- router.push -->
     <!-- <button @click="goToEdit(todo.id)">Edit</button> -->
     <button v-if="todo.id != null && todo.id != 'undefined'">
