@@ -1,5 +1,5 @@
 <script setup>
-import { storeToRefs } from 'pinia'
+// import { storeToRefs } from 'pinia'
 import { toRefs } from 'vue'
 import { useRouter } from 'vue-router'
 import { useTodoListStore } from '../store/index' //要得到store的数据，首先要引入store
@@ -10,10 +10,10 @@ const props = defineProps({
 const router = useRouter()
 const store = useTodoListStore()
 const { deleteTodo } = store
-const { getTodoById } = storeToRefs(store)
+// const { getTodoById } = store
 
 const { id } = toRefs(props)
-const todo = getTodoById(id.value)
+const todo = store.getTodoById(id.value)
 
 const deleteItem = (id) => {
   deleteTodo(id)

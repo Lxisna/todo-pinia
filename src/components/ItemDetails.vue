@@ -12,11 +12,6 @@ export default {
 
     //需要将toggleCompleted带入组件中。由于它是一个action而不是反应式state属性，因此不将 storeToRefs 用于 toggleCompleted
     const { toggleCompleted } = store
-
-    // const router = useRouter()
-    // function goToEdit(id) {
-    //   router.push(`/itemedit/${id}`)
-    // }
     return { todoLists, toggleCompleted }
   }
 }

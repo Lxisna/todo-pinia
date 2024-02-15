@@ -1,7 +1,4 @@
-<script setup>
-import { persistTodoListStore } from './store' //要得到store的数据，首先要引入store
-persistTodoListStore()
-</script>
+<script></script>
 
 <template>
   <div class="box">
